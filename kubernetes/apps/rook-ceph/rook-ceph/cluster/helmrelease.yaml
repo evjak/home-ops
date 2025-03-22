@@ -17,6 +17,8 @@ spec:
   dependsOn:
     - name: rook-ceph-operator
       namespace: rook-ceph
+    - name: snapshot-controller
+      namespace: system
   values:
     toolbox:
       enabled: true
