@@ -21,6 +21,7 @@ spec:
   wait: false
   dependsOn:
     - name: rook-ceph-operator
+      namespace: rook-ceph
     # TODO: add rook-ceph-cluster
   postBuild:
     substitute:
