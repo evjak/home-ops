@@ -2,8 +2,9 @@
 # yaml-language-server: $schema=https://json.schemastore.org/kustomization
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
+namespace: finance
+components:
+  - ../../components/common
+  - ../../components/repos/app-template
 resources:
-  - ./external-dns.yaml
-  - ./ingress-nginx.yaml
-  - ./rook-ceph-charts.yaml
-  - ./bjw-s.yaml
+  - ./actual/ks.yaml
