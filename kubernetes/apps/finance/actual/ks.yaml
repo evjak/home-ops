@@ -22,8 +22,12 @@ spec:
   dependsOn:
     - name: rook-ceph-operator
       namespace: rook-ceph
-    # TODO: add rook-ceph-cluster
+    - name: rook-ceph-cluster
+      namespace: rook-ceph
   postBuild:
+    substituteFrom:
+      - name: cluster-secrets
+        kind: Secret
     substitute:
       APP: *appname
       VOLSYNC_CLAIM: actual
