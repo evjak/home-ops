@@ -25,9 +25,9 @@ spec:
     - name: rook-ceph-cluster
       namespace: rook-ceph
   postBuild:
-    substituteFrom:
-      - name: cluster-secrets
-        kind: Secret
     substitute:
       APP: *appname
       VOLSYNC_CLAIM: *appname
+    substituteFrom:
+      - name: cluster-secrets
+        kind: Secret
