@@ -15,7 +15,7 @@ spec:
         kind: HelmRepository
         name: bjw-s
         namespace: flux-system
-    dependsOn:
+  dependsOn:
     - name: cloudflared
       namespace: network
   values:
