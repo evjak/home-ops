@@ -5,6 +5,7 @@ kind: Kustomization
 namespace: finance
 components:
   - ../../components/common
+  - ../../components/volsync
   - ../../components/repos/app-template
 resources:
   - ./actual/ks.yaml
