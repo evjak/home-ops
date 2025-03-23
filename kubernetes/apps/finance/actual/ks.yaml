@@ -30,4 +30,4 @@ spec:
         kind: Secret
     substitute:
       APP: *appname
-      VOLSYNC_CLAIM: actual
+      VOLSYNC_CLAIM: *appname
