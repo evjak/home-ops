@@ -31,11 +31,11 @@ spec:
       dashboard:
         ingressClassName: internal
         host:
-          name: "rook.${SECRET_DOMAIN}"
+          name: &host rook.internal.${SECRET_DOMAIN}
           path: /
         tls:
           - hosts:
-              - "rook.${SECRET_DOMAIN}"
+              - *host
 
     cephClusterSpec:
       cephVersion:
