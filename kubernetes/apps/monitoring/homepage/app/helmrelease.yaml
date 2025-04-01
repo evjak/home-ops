@@ -30,9 +30,6 @@ spec:
               tag: v1.1.1
             env:
               TZ: America/Los_Angeles
-            envFrom:
-              - secretRef:
-                  name: homepage-secret
             resources:
               requests:
                 cpu: 15m
