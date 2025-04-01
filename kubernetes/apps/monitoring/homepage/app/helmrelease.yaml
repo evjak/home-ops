@@ -46,6 +46,10 @@ spec:
       app:
         enabled: true
         className: internal
+        annotations:
+          nginx.ingress.kubernetes.io/from-to-www-redirect: "true"
+          nginx.ingress.kubernetes.io/satisfy: any
+          nginx.ingress.kubernetes.io/whitelist-source-range: 192.168.31.0/24
         hosts:
           - host: &host "{{ .Release.Name }}.internal.${SECRET_DOMAIN}"
             paths:
