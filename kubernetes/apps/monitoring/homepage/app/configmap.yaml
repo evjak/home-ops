@@ -95,9 +95,6 @@ data:
         style: row
         columns: 3
         icon: mdi-home-analytics
-      System:
-        style: column
-        icon: mdi-calendar
       Self hosted media:
         style: row
         columns: 3
