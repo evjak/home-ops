@@ -30,6 +30,7 @@ spec:
               tag: v1.1.1
             env:
               TZ: America/Los_Angeles
+              HOMEPAGE_ALLOWED_HOSTS: "*"
             resources:
               requests:
                 cpu: 15m
