@@ -56,7 +56,6 @@ data:
         - TrueNas:
             href: https://nas.${SECRET_DOMAIN}
             icon: truenas.png
-            description: Self-hosted NAS system
         - Jellyfin:
             href: https://jellyfin.${SECRET_DOMAIN}
             icon: jellyfin.png
@@ -70,7 +69,7 @@ data:
         - Proxmox:
             href: https://proxmox.${SECRET_DOMAIN}
             icon: proxmox-light.png
-        - Mikrotik:
+        - Nginx Proxy Manager:
             href: https://nginxpm.${SECRET_DOMAIN}
             icon: nginx-proxy-manager.png
     - Extras:
@@ -93,15 +92,15 @@ data:
     layout:
       Smart Home:
         style: row
-        columns: 3
+        columns: 2
         icon: mdi-home-analytics
       Self hosted media:
         style: row
-        columns: 3
+        columns: 1
         icon: mdi-multimedia
       System:
         style: row
-        columns: 3
+        columns: 1
         icon: mdi-settings-outline
       Extras:
         style: row
