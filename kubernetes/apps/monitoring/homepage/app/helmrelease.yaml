@@ -31,6 +31,9 @@ spec:
             env:
               TZ: America/Los_Angeles
               HOMEPAGE_ALLOWED_HOSTS: "*"
+            envFrom:
+              - secretRef:
+                  name: homepage-secret
             resources:
               requests:
                 cpu: 15m
