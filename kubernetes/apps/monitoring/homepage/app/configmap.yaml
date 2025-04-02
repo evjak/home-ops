@@ -43,11 +43,6 @@ data:
             # TODO: Migrate to actual address
             href: http://homeassistant.local:8123/
             icon: home-assistant.png
-            description: Home Automation Software
-            widget:
-              type: homeassistant
-              url: https://homeassistant.local:8123
-              key: {{HOMEPAGE_VAR_HASS_TOKEN}}
         - Frigate:
             href: https://frigate.${SECRET_DOMAIN}
             icon: frigate-light.png
@@ -75,7 +70,10 @@ data:
     - Extras:
         - Wavelog:
             href: http://wavelog.lan/
-            icon: booklogr
+            icon: booklogr.png
+        - Actual Budget:
+            href: https://budget.${SECRET_DOMAIN}
+            icon: actual-budget.png
 
   settings.yaml: |
     title: My Home Dashboard
@@ -96,15 +94,15 @@ data:
         icon: mdi-home-analytics
       Self hosted media:
         style: row
-        columns: 1
+        columns: 3
         icon: mdi-multimedia
       System:
         style: row
-        columns: 1
+        columns: 3
         icon: mdi-settings-outline
       Extras:
         style: row
-        columns: 1
+        columns: 2
         icon: mdi-settings-outline
   widgets.yaml: |
     - logo:
