@@ -9,3 +9,4 @@ resources:
   - ./bjw-s.yaml
   - ./crowdsec-charts.yaml
   - ./kubernetes-dashboard.yaml
+  - ./infisical-charts.yaml
