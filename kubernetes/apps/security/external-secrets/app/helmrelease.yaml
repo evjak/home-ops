@@ -23,7 +23,7 @@ spec:
       strategy: rollback
       retries: 3
   dependsOn:
-    - name: onepassword-connect
+    - name: infisical-secrets-operator
       namespace: security
   values:
     installCRDs: true
