@@ -10,3 +10,4 @@ resources:
   - ./crowdsec-charts.yaml
   - ./kubernetes-dashboard.yaml
   - ./infisical-charts.yaml
+  - ./external-secrets.yaml
