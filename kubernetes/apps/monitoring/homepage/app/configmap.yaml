@@ -47,7 +47,7 @@ data:
             widget:
               type: homeassistant
               url: http://homeassistant.local:8123
-              key: {{HOMEPAGE_VAR_HASS_TOKEN}}
+              key: "{{HOMEPAGE_VAR_HASS_TOKEN}}"
         - Frigate:
             href: https://frigate.${SECRET_DOMAIN}
             icon: frigate-light.png

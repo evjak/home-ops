@@ -23,6 +23,8 @@ spec:
         strategy: RollingUpdate
         annotations:
           reloader.stakater.com/auto: "true"
+          secret.reloader.stakater.com/reload: &secret homepage-secret
+          configmap.reloader.stakater.com/reload: &configmap homepage-config
         containers:
           app:
             image:
@@ -32,8 +34,8 @@ spec:
               TZ: America/Los_Angeles
               HOMEPAGE_ALLOWED_HOSTS: "*"
             envFrom:
-              - secretRef:
-                  name: homepage-secret
+            - secretRef:
+                name: *secret
             resources:
               requests:
                 cpu: 15m
