@@ -47,7 +47,7 @@ data:
             widget:
               type: homeassistant
               url: http://homeassistant.local:8123
-              key: "{{HOMEPAGE_VAR_HASS_TOKEN}}"
+              key: {{HOMEPAGE_VAR_HASS_TOKEN}}
         - Frigate:
             href: https://frigate.${SECRET_DOMAIN}
             icon: frigate-light.png
@@ -56,29 +56,37 @@ data:
         - TrueNas:
             href: https://nas.${SECRET_DOMAIN}
             icon: truenas.png
+            description: NAS Software
         - Jellyfin:
             href: https://jellyfin.${SECRET_DOMAIN}
             icon: jellyfin.png
+            description: Home Media Software
         - Immich:
             href: https://photos.${SECRET_DOMAIN}
             icon: immich.png
+            description: Self-hosted photos
     - System:
         - Mikrotik:
             href: https://router.${SECRET_DOMAIN}
             icon: mikrotik-light.png
+            description: Router WEB UI
         - Proxmox:
             href: https://proxmox.${SECRET_DOMAIN}
             icon: proxmox-light.png
+            description: VM management
         - Nginx Proxy Manager:
             href: https://nginxpm.${SECRET_DOMAIN}
             icon: nginx-proxy-manager.png
+            description: Nginx Proxy Management
     - Extras:
         - Wavelog:
             href: http://wavelog.lan/
             icon: booklogr.png
+            description: Ham radio logging software
         - Actual Budget:
             href: https://budget.${SECRET_DOMAIN}
             icon: actual-budget.png
+            description: Budgeting tool
 
   settings.yaml: |
     title: My Home Dashboard
@@ -92,23 +100,6 @@ data:
       hideInternetSearch: true
       showSearchSuggestions: true
       hideVisitURL: true
-    layout:
-      Smart Home:
-        style: row
-        columns: 2
-        icon: mdi-home-analytics
-      Self hosted media:
-        style: row
-        columns: 3
-        icon: mdi-multimedia
-      System:
-        style: row
-        columns: 3
-        icon: mdi-settings-outline
-      Extras:
-        style: row
-        columns: 2
-        icon: mdi-settings-outline
   widgets.yaml: |
     - logo:
         icon: https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/webp/selfhosted-light.webp
