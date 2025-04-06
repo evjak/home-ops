@@ -8,14 +8,17 @@ spec:
   commonMetadata:
     labels:
       app.kubernetes.io/name: *app
+  dependsOn:
+    - name: external-secrets-stores
+      namespace: security
   interval: 30m
   path: ./kubernetes/apps/monitoring/homepage/app
   postBuild:
+    substitute:
+      APP: *app
     substituteFrom:
       - name: cluster-secrets
         kind: Secret
-    substitute:
-      APP: *app
   prune: true
   retryInterval: 1m
   sourceRef:
