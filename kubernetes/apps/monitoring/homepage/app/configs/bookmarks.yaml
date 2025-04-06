@@ -1,0 +1,29 @@
+---
+- Communicate:
+    - Discord:
+        - icon: discord.png
+          href: 'https://discord.com/app'
+    - Mail:
+        - icon: proton-mail.png
+          href: 'https://account.proton.me/mail'
+- Media:
+    - YouTube:
+        - icon: youtube.png
+          href: 'https://youtube.com/feed/subscriptions'
+    - Spotify:
+        - icon: spotify.png
+          href: 'http://open.spotify.com'
+- Reading:
+    - Reddit:
+        - icon: reddit.png
+          href: 'https://reddit.com'
+- Devops:
+    - kubesearch:
+        - icon: kubernetes-dashboard.png
+          href: 'https://kubesearch.dev/'
+    - home-ops:
+        - icon: github.png
+          href: 'https://github.com/evjak/home-ops'
+    - dashboard-icons:
+        - icon: github.png
+          href: 'https://github.com/homarr-labs/dashboard-icons/blob/main/ICONS.md'
