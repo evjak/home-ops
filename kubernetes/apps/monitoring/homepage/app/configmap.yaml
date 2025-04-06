@@ -52,7 +52,7 @@ data:
             href: https://frigate.${SECRET_DOMAIN}
             icon: frigate-light.png
             description: Video Security Software
-    - Self hosted media:
+    - Self-Hosted media:
         - TrueNas:
             href: https://nas.${SECRET_DOMAIN}
             icon: truenas.png
@@ -78,6 +78,15 @@ data:
             href: https://nginxpm.${SECRET_DOMAIN}
             icon: nginx-proxy-manager.png
             description: Nginx Proxy Management
+        - Cloudflared:
+            href: https://dash.cloudflare.com/
+            icon: cloudflare-zero-trust.png
+            description: Cloudflared Tunnel
+            widget:
+              type: cloudflared
+              accountid: {{HOMEPAGE_VAR_CLOUDFLARE_ACCOUNT_ID}}
+              tunnelid: {{HOMEPAGE_VAR_CLOUDFLARE_TUNNEL_ID}}
+              key: {{HOMEPAGE_VAR_CLOUDFLARE_API_TOKEN}}
     - Extras:
         - Wavelog:
             href: http://wavelog.lan/
@@ -100,6 +109,20 @@ data:
       hideInternetSearch: true
       showSearchSuggestions: true
       hideVisitURL: true
+    layout:
+      Smart-Home:
+        style: column
+        icon: mdi-home-automation
+      Self-Hosted Media:
+        style: column
+        icon: mdi-multimedia
+      System:
+        style: column
+        icon: mdi-server-network
+      Extras:
+        style: row
+        columns: 2
+        icon: mdi-one-up
   widgets.yaml: |
     - logo:
         icon: https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/webp/selfhosted-light.webp
