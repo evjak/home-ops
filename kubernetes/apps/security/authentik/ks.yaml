@@ -7,6 +7,9 @@ metadata:
   namespace: &namespace security
 spec:
   targetNamespace: *namespace
+  dependsOn:
+    - name: external-secrets-stores
+      namespace: security
   commonMetadata:
     labels:
       app.kubernetes.io/name: *app
