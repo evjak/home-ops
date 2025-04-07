@@ -11,3 +11,4 @@ resources:
   - ./kubernetes-dashboard.yaml
   - ./infisical-charts.yaml
   - ./external-secrets.yaml
+  - ./cloudnative-pg-charts.yaml
