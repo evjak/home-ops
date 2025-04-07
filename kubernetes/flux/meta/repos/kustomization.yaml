@@ -12,3 +12,4 @@ resources:
   - ./infisical-charts.yaml
   - ./external-secrets.yaml
   - ./cloudnative-pg-charts.yaml
+  - ./authentik-charts.yaml

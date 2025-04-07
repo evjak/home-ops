@@ -1,0 +1,61 @@
+---
+# yaml-language-server: $schema=https://kubernetes-schemas.pages.dev/helm.toolkit.fluxcd.io/helmrelease_v2.json
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: authentik
+spec:
+  interval: 1h
+  chart:
+    spec:
+      chart: authentik
+      version: 2025.2.3
+      sourceRef:
+        kind: HelmRepository
+        name: authentik-charts
+        namespace: flux-system
+      interval: 5m
+  install:
+    remediation:
+      retries: 3
+  upgrade:
+    cleanupOnFail: true
+    remediation:
+      strategy: rollback
+      retries: 3
+  values:
+    global:
+      podAnnotations:
+        secret.reloader.stakater.com/reload: &secret authentik-secret
+      deploymentStrategy:
+        type: RollingUpdate
+      envFrom:
+        - secretRef:
+            name: *secret
+    redis:
+      enabled: true
+    server:
+      replicas: 1
+      metrics:
+        enabled: false
+        serviceMonitor:
+          enabled: false
+      ingress:
+        annotations:
+          gethomepage.dev/enabled: "true"
+          gethomepage.dev/icon: authentik.png
+          gethomepage.dev/name: Authentik
+          gethomepage.dev/group: System
+          gethomepage.dev/app: authentik
+          gethomepage.dev/description: OIDC User Management
+        dashboard:
+          ingressClassName: internal
+          host:
+            name: &host sso.internal.${SECRET_DOMAIN}
+            path: /
+          tls:
+            - hosts:
+                - *host
+    prometheus:
+      rules:
+        enabled: false
