@@ -8,6 +8,8 @@ metadata:
 spec:
   targetNamespace: *namespace
   dependsOn:
+    - name: cloudnative-pg-cluster
+      namespace: database
     - name: external-secrets-stores
       namespace: *namespace
   commonMetadata:
