@@ -64,6 +64,3 @@ spec:
           tls:
             - hosts:
                 - *host
-    prometheus:
-      rules:
-        enabled: false
