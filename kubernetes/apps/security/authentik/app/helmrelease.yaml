@@ -56,11 +56,17 @@ spec:
           gethomepage.dev/group: System
           gethomepage.dev/app: authentik
           gethomepage.dev/description: OIDC User Management
-        dashboard:
-          ingressClassName: internal
-          host:
-            name: &host sso.internal.${SECRET_DOMAIN}
-            path: /
+        app:
+          enabled: true
+          className: internal
+          hosts:
+            - host: &host sso.internal.${SECRET_DOMAIN}
+              paths:
+                - path: /
+                  pathType: Prefix
+                  service:
+                    identifier: app
+                    port: http
           tls:
             - hosts:
                 - *host
