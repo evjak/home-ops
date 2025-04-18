@@ -49,17 +49,12 @@ spec:
         serviceMonitor:
           enabled: false
       ingress:
-        app:
-          className: external
-          annotations:
-            external-dns.alpha.kubernetes.io/target: "external.${SECRET_DOMAIN}"
-          hosts:
-            - host: "sso.${SECRET_DOMAIN}"
-              paths:
-                - path: /
-                  service:
-                    identifier: app
-                    port: http
+        ingressClassName: external
+        annotations:
+          external-dns.alpha.kubernetes.io/target: "external.${SECRET_DOMAIN}"
+        hosts:
+            - &host sso.${SECRET_DOMAIN}
+        tls: [hosts: [*host]]
     prometheus:
       rules:
         enabled: false
