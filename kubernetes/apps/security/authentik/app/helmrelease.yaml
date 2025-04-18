@@ -49,21 +49,17 @@ spec:
         serviceMonitor:
           enabled: false
       ingress:
-        annotations:
-          gethomepage.dev/enabled: "true"
-          gethomepage.dev/icon: authentik.png
-          gethomepage.dev/name: Authentik
-          gethomepage.dev/group: System
-          gethomepage.dev/app: authentik
-          gethomepage.dev/description: OIDC User Management
-        dashboard:
-          ingressClassName: internal
-          host:
-            name: &host sso.internal.${SECRET_DOMAIN}
-            path: /
-          tls:
-            - hosts:
-                - *host
+        app:
+          className: external
+          annotations:
+            external-dns.alpha.kubernetes.io/target: "external.${SECRET_DOMAIN}"
+          hosts:
+            - host: "sso.${SECRET_DOMAIN}"
+              paths:
+                - path: /
+                  service:
+                    identifier: app
+                    port: http
     prometheus:
       rules:
         enabled: false
