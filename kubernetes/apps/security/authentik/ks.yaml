@@ -16,6 +16,10 @@ spec:
     labels:
       app.kubernetes.io/name: *app
   path: ./kubernetes/apps/security/authentik/app
+  postBuild:
+    substituteFrom:
+      - name: cluster-secrets
+        kind: Secret
   prune: true
   sourceRef:
     kind: GitRepository
