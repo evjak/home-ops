@@ -33,6 +33,11 @@ spec:
     provider: sops
     secretRef:
       name: sops-age
+  postBuild:
+    substitute: {}
+    substituteFrom:
+      - kind: Secret
+        name: cluster-secrets
   dependsOn:
     - name: cluster-meta
       namespace: flux-system
@@ -56,6 +61,10 @@ spec:
             provider: sops
             secretRef:
               name: sops-age
+          postBuild:
+            substituteFrom:
+              - kind: Secret
+                name: cluster-secrets
       target:
         group: kustomize.toolkit.fluxcd.io
         kind: Kustomization

@@ -5,5 +5,14 @@ kind: Kustomization
 resources:
   - ./helmrelease.yaml
   - ./rbac.yaml
-  - ./configmap.yaml
   - ./externalsecret.yaml
+configMapGenerator:
+  - name: homepage-config
+    files:
+      - bookmarks.yaml=./configs/bookmarks.yaml
+      - kubernetes.yaml=./configs/kubernetes.yaml
+      - services.yaml=./configs/services.yaml
+      - settings.yaml=./configs/settings.yaml
+      - widgets.yaml=./configs/widgets.yaml
+generatorOptions:
+  disableNameSuffixHash: true

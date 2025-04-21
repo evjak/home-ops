@@ -1,0 +1,26 @@
+---
+title: My Home Dashboard
+favicon: https://github.com/homarr-labs/dashboard-icons/blob/main/png/heimdall.png
+useEqualHeights: true
+theme: dark
+color: slate
+headerStyle: clean
+quicklaunch:
+  searchDescriptions: true
+  hideInternetSearch: true
+  showSearchSuggestions: true
+  hideVisitURL: true
+layout:
+  Smart-Home:
+    style: column
+    icon: mdi-home-automation
+  Self-Hosted Media:
+    style: column
+    icon: mdi-multimedia
+  System:
+    style: column
+    icon: mdi-server-network
+  Extras:
+    style: row
+    columns: 2
+    icon: mdi-one-up
