@@ -51,6 +51,13 @@ spec:
       ingress:
         enabled: true
         ingressClassName: internal
+        annotations:
+          gethomepage.dev/enabled: "true"
+          gethomepage.dev/icon: authentik.png
+          gethomepage.dev/name: Authentik
+          gethomepage.dev/group: System
+          gethomepage.dev/app: authentik
+          gethomepage.dev/description: OIDC User Management
         hosts:
             - &host sso.internal.${SECRET_DOMAIN}
         tls: [hosts: [*host]]
