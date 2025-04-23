@@ -26,6 +26,7 @@ spec:
       actual:
         annotations:
           reloader.stakater.com/auto: "true"
+          secret.reloader.stakater.com/reload: &secret actual-auth-secret
         pod:
           securityContext:
             runAsUser: 1000
@@ -39,6 +40,11 @@ spec:
               tag: 25.4.0
             env:
               ACTUAL_PORT: &httpPort 5006
+              ACTUAL_OPENID_DISCOVERY_URL: https://sso.internal.${SECRET_DOMAIN}/application/o/actual-budget/
+              ACTUAL_OPENID_SERVER_HOSTNAME: https://actual.${SECRET_DOMAIN}
+            envFrom:
+            - secretRef:
+                name: *secret
             probes:
               liveness:
                 enabled: true
