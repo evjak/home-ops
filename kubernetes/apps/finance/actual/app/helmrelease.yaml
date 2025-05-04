@@ -37,7 +37,7 @@ spec:
           app:
             image:
               repository: ghcr.io/actualbudget/actual-server
-              tag: 25.4.0
+              tag: 25.5.0
             env:
               ACTUAL_PORT: &httpPort 5006
               ACTUAL_OPENID_DISCOVERY_URL: https://sso.internal.${SECRET_DOMAIN}/application/o/actual-budget/
