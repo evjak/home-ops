@@ -16,6 +16,7 @@ spec:
       - name: cluster-secrets
         kind: Secret
     substitute:
+      APP: *app
       VOLSYNC_CLAIM: *app
   prune: true
   retryInterval: 2m
