@@ -40,7 +40,7 @@ spec:
               tag: 25.5.0
             env:
               ACTUAL_PORT: &httpPort 5006
-              ACTUAL_OPENID_DISCOVERY_URL: https://sso.internal.${SECRET_DOMAIN}/application/o/actual-budget/
+              ACTUAL_OPENID_DISCOVERY_URL: https://sso.${SECRET_DOMAIN}/application/o/actual-budget/
               ACTUAL_OPENID_SERVER_HOSTNAME: https://actual.${SECRET_DOMAIN}
             envFrom:
             - secretRef:

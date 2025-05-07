@@ -50,7 +50,7 @@ spec:
           enabled: false
       ingress:
         enabled: true
-        ingressClassName: internal
+        ingressClassName: external
         annotations:
           gethomepage.dev/enabled: "true"
           gethomepage.dev/icon: authentik.png
@@ -58,8 +58,9 @@ spec:
           gethomepage.dev/group: System
           gethomepage.dev/app: authentik
           gethomepage.dev/description: OIDC User Management
+          external-dns.alpha.kubernetes.io/target: "external.${SECRET_DOMAIN}"
         hosts:
-            - &host sso.internal.${SECRET_DOMAIN}
+            - &host sso.${SECRET_DOMAIN}
         tls: [hosts: [*host]]
     prometheus:
       rules:
