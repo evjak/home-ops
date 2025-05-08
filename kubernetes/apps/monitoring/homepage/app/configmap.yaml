@@ -34,7 +34,7 @@ data:
               href: 'https://github.com/evjak/home-ops'
         - dashboard-icons:
             - icon: github.png
-              href: 'https://github.com/homarr-labs/dashboard-icons/blob/main/ICONS.md'
+              href: 'https://dashboardicons.com/'
   kubernetes.yaml: |
     mode: cluster
   services.yaml: |
@@ -88,10 +88,10 @@ data:
             href: http://wavelog.lan/
             icon: booklogr.png
             description: Ham radio logging software
-        - Actual Budget:
-            href: https://budget.${SECRET_DOMAIN}
-            icon: actual-budget.png
-            description: Budgeting tool
+        - Paperless:
+            href: https://paperless.${SECRET_DOMAIN}
+            icon: paperless.png
+            description: Digital document management system
 
   settings.yaml: |
     title: My Home Dashboard

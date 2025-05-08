@@ -71,6 +71,11 @@ spec:
       app:
         className: external
         annotations:
+          gethomepage.dev/enabled: "true"
+          gethomepage.dev/icon: actual-budget.png
+          gethomepage.dev/name: Actual Budget
+          gethomepage.dev/group: Extras
+          gethomepage.dev/description: Budgeting tool
           external-dns.alpha.kubernetes.io/target: "external.${SECRET_DOMAIN}"
         hosts:
           - host: "actual.${SECRET_DOMAIN}"
