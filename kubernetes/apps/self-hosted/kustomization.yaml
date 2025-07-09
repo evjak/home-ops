@@ -6,6 +6,5 @@ namespace: self-hosted
 components:
   - ../../components/common
   - ../../components/repos/app-template
-  - ../../components/volsync
 resources:
   - ./vikunja/ks.yaml
