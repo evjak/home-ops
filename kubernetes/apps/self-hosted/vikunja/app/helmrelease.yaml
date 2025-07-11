@@ -31,8 +31,6 @@ spec:
             envFrom: &envFrom
               - secretRef:
                   name: vikunja-secret
-              - secretRef:
-                  name: vikunja-db-secret
         containers:
           app:
             image:
