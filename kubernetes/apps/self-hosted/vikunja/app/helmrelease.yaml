@@ -32,7 +32,7 @@ spec:
               - secretRef:
                   name: vikunja-secret
               - secretRef:
-                  name: cloudnative-pg-secret
+                  name: vikunja-db-secret
         containers:
           app:
             image:
