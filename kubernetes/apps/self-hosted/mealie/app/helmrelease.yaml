@@ -51,7 +51,7 @@ spec:
               BASE_URL: https://mealie.${SECRET_DOMAIN}
               ALLOW_SIGNUP: true
               API_DOCS: false
-              TZ: ${TZ}
+              TZ: America/Los_Angeles
               # Default Values
               WORKERS_PER_CORE: 1
               MAX_WORKERS: 1
@@ -82,7 +82,7 @@ spec:
           gethomepage.dev/name: Mealie
           gethomepage.dev/group: Applications
         hosts:
-          - host: &host "mealie.${SECRET_DOMAIN}"
+          - host: &host "{{ .Release.Name }}.internal.${SECRET_DOMAIN}"
             paths:
               - path: /
                 service:
