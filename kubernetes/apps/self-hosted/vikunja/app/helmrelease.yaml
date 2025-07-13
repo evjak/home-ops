@@ -30,7 +30,7 @@ spec:
               pullPolicy: IfNotPresent
             envFrom: &envFrom
               - secretRef:
-                  name: vikunja-secret
+                  name: &secret vikunja-secret
         containers:
           app:
             image:
@@ -87,3 +87,11 @@ spec:
         existingClaim: *app
         globalMounts:
           - path: /app/vikunja/files
+
+      vikunja-config:
+        type: secret
+        name: *secret
+        globalMounts:
+          - path: /app/vikunja/config.yaml
+            subPath: config.yaml
+            readOnly: true
