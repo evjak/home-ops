@@ -48,10 +48,16 @@ spec:
               repository: ghcr.io/mealie-recipes/mealie
               tag: v3.0.0
             env:
-              BASE_URL: https://mealie.${SECRET_DOMAIN}
+              BASE_URL: https://mealie.internal.${SECRET_DOMAIN}
               ALLOW_SIGNUP: true
               API_DOCS: false
               TZ: America/Los_Angeles
+
+              # OpenID Values
+              # From: https://docs.mealie.io/documentation/getting-started/installation/backend-config/#openid-connect-oidc
+              OIDC_AUTH_ENABLED: true
+              OIDC_CONFIGURATION_URL: https://sso.${SECRET_DOMAIN}/application/o/mealie/.well-known/openid-configuration
+
               # Default Values
               WORKERS_PER_CORE: 1
               MAX_WORKERS: 1
