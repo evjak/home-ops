@@ -3,13 +3,14 @@
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
-  name: &app kubernetes-dashboard
-  namespace: monitoring
+  name: &app gotify
+  namespace: &namespace monitoring
 spec:
+  targetNamespace: *namespace
   commonMetadata:
     labels:
       app.kubernetes.io/name: *app
-  path: ./kubernetes/apps/monitoring/kubernetes-dashboard/app
+  path: ./kubernetes/apps/monitoring/gotify/app
   prune: true
   sourceRef:
     kind: GitRepository
