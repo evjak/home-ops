@@ -110,18 +110,18 @@ data:
         style: row
         columns: 4
         icon: mdi-multimedia
-      Smart-Home:
-        style: row
-        columns: 2
-        icon: mdi-home-automation
       System:
         style: row
         columns: 5
         icon: mdi-server-network
       Self-Hosted:
         style: row
-        columns: 4
+        columns: 5
         icon: mdi-one-up
+      Smart-Home:
+        style: row
+        columns: 2
+        icon: mdi-home-automation
   widgets.yaml: |
     - logo:
         icon: https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/webp/selfhosted-light.webp
