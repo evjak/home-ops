@@ -87,6 +87,7 @@ spec:
           gethomepage.dev/icon: sh-mealie
           gethomepage.dev/name: Mealie
           gethomepage.dev/group: Self-Hosted
+          gethomepage.dev/description: Recipe Management
         hosts:
           - host: &host "{{ .Release.Name }}.internal.${SECRET_DOMAIN}"
             paths:
