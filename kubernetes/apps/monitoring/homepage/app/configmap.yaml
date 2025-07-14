@@ -48,7 +48,7 @@ data:
             href: https://frigate.${SECRET_DOMAIN}
             icon: frigate-light.png
             description: Video Security Software
-    - Self-Hosted media:
+    - Media:
         - TrueNas:
             href: https://nas.${SECRET_DOMAIN}
             icon: truenas.png
@@ -83,7 +83,7 @@ data:
               accountid: {{HOMEPAGE_VAR_CLOUDFLARE_ACCOUNT_ID}}
               tunnelid: {{HOMEPAGE_VAR_CLOUDFLARE_TUNNEL_ID}}
               key: {{HOMEPAGE_VAR_CLOUDFLARE_API_TOKEN}}
-    - Extras:
+    - Self-Hosted:
         - Wavelog:
             href: http://wavelog.lan/
             icon: booklogr.png
@@ -106,18 +106,20 @@ data:
       showSearchSuggestions: true
       hideVisitURL: true
     layout:
+      Media:
+        style: row
+        columns: 4
+        icon: mdi-multimedia
       Smart-Home:
         style: column
         icon: mdi-home-automation
-      Self-Hosted Media:
-        style: column
-        icon: mdi-multimedia
       System:
-        style: column
-        icon: mdi-server-network
-      Extras:
         style: row
-        columns: 2
+        columns: 5
+        icon: mdi-server-network
+      Self-Hosted:
+        style: row
+        columns: 4
         icon: mdi-one-up
   widgets.yaml: |
     - logo:
