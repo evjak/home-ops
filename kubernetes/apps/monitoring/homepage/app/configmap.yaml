@@ -111,7 +111,8 @@ data:
         columns: 4
         icon: mdi-multimedia
       Smart-Home:
-        style: column
+        style: row
+        columns: 2
         icon: mdi-home-automation
       System:
         style: row
