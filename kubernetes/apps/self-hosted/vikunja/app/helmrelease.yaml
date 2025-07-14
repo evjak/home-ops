@@ -66,10 +66,6 @@ spec:
           gethomepage.dev/description: Tasks and project management platform.
           gethomepage.dev/group: Self-Hosted
           gethomepage.dev/icon: vikunja.png
-          gethomepage.dev/pod-selector: >-
-            app in (
-              vikunja
-            )
         hosts:
           - host: *host
             paths:
