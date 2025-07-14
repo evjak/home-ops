@@ -74,7 +74,8 @@ spec:
           gethomepage.dev/enabled: "true"
           gethomepage.dev/icon: actual-budget.png
           gethomepage.dev/name: Actual Budget
-          gethomepage.dev/group: Self-Hosted
+          gethomepage.dev/group: Media
+          gethomepage.dev/app: actual-budget
           gethomepage.dev/description: Budgeting tool
           external-dns.alpha.kubernetes.io/target: "external.${SECRET_DOMAIN}"
         hosts:
