@@ -14,13 +14,6 @@ data:
         - Mail:
             - icon: proton-mail.png
               href: 'https://account.proton.me/mail'
-    - Media:
-        - YouTube:
-            - icon: youtube.png
-              href: 'https://youtube.com/feed/subscriptions'
-        - Spotify:
-            - icon: spotify.png
-              href: 'http://open.spotify.com'
     - Reading:
         - Reddit:
             - icon: reddit.png
