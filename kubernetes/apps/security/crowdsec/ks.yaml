@@ -10,6 +10,10 @@ spec:
   retryInterval: 1m
   timeout: 3m
   path: "./kubernetes/apps/security/crowdsec/app"
+  postBuild:
+    substituteFrom:
+      - name: cluster-secrets
+        kind: Secret
   prune: true
   wait: true
   sourceRef:
