@@ -43,6 +43,11 @@ spec:
   maxHistory: 3
   values:
     container_runtime: containerd
+    config:
+      # https://docs.crowdsec.net/docs/notification_plugins/http#enabling-the-plugin
+      profiles.yaml: |
+        notifications:
+          - http_default
     lapi:
       affinity:
         nodeAffinity:
@@ -55,6 +60,20 @@ spec:
                      - amd64
       dashboard:
         enabled: false
+        ingress:
+          enabled: false
+          ingressClassName: "internal"
+          host: &hostdashboard "crowdsec-dashboard.internal.${SECRET_DOMAIN}"
+          tls:
+            - hosts:
+                - *hostdashboard
+      ingress:
+        enabled: true
+        ingressClassName: "internal"
+        host: &host "crowdsec.internal.${SECRET_DOMAIN}"
+        tls:
+          - hosts:
+              - *host
       metrics:
         enabled: true
         serviceMonitor:
@@ -70,6 +89,18 @@ spec:
           accessModes:
             - ReadWriteOnce
           size: 100Mi
+      extraVolumes:
+        - name: http-config
+          secret:
+            secretName: crowdsec-secret
+            items:
+              - key: http.yaml
+                path: http.yaml
+      extraVolumeMounts:
+        - name: http-config
+          mountPath: /etc/crowdsec_data/notifications/http.yaml
+          subPath: http.yaml
+          readOnly: true
     agent:
       acquisition:
         - namespace: nginx-ingress
