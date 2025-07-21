@@ -132,7 +132,7 @@ spec:
               - name: "sdb"
           - name: "talos-controlplane-hw-1"
             devices:
-              - name: "sda"
+              - name: "/dev/disk/by-id/ata-CT1000BX500SSD1_2511E9AFF42B"
           - name: "talos-worker-1"
             devices:
               - name: "sdb"
