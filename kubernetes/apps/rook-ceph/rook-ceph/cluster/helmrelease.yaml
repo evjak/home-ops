@@ -130,6 +130,9 @@ spec:
           - name: "talos-controlplane-3"
             devices:
               - name: "sdb"
+          - name: "talos-controlplane-hw-1"
+            devices:
+              - name: "sda"
           - name: "talos-worker-1"
             devices:
               - name: "sdb"
