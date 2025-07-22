@@ -38,9 +38,6 @@ spec:
               - *host
 
     cephClusterSpec:
-      cephVersion:
-        image: quay.io/ceph/ceph:v19.2.2@sha256:8214ebff6133ac27d20659038df6962dbf9d77da21c9438a296b2e2059a56af6
-
       cephConfig:
         global:
           bdev_enable_discard: "true" # quote
@@ -132,7 +129,7 @@ spec:
               - name: "sdb"
           - name: "talos-controlplane-hw-1"
             devices:
-              - name: "/dev/disk/by-id/ata-CT1000BX500SSD1_2511E9AFF42B"
+              - name: "sda"
           - name: "talos-worker-1"
             devices:
               - name: "sdb"
