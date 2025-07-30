@@ -12,8 +12,7 @@ spec:
       version: 1.18.0
       sourceRef:
         kind: HelmRepository
-        name: external-dns
-        namespace: flux-system
+        name: external-dns-charts
   install:
     disableSchemaValidation: true # Ref: https://github.com/kubernetes-sigs/external-dns/issues/5206
     remediation:

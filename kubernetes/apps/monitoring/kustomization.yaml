@@ -5,7 +5,6 @@ kind: Kustomization
 namespace: monitoring
 components:
   - ../../components/common
-  - ../../components/repos/app-template
 resources:
   - ./gotify/ks.yaml
   - ./homepage/ks.yaml
