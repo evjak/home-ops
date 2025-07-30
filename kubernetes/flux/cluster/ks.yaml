@@ -3,7 +3,7 @@
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
-  name: cluster-meta
+  name: cluster-repos
   namespace: &namespace flux-system
 spec:
   decryption:
@@ -11,7 +11,7 @@ spec:
     secretRef:
       name: sops-age
   interval: 1h
-  path: ./kubernetes/flux/meta
+  path: ./kubernetes/flux/repos
   prune: true
   retryInterval: 2m
   sourceRef:
@@ -34,7 +34,7 @@ spec:
     secretRef:
       name: sops-age
   dependsOn:
-    - name: cluster-meta
+    - name: cluster-repos
       namespace: flux-system
   interval: 1h
   path: ./kubernetes/apps
