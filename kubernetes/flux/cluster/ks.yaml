@@ -33,11 +33,6 @@ spec:
     provider: sops
     secretRef:
       name: sops-age
-  postBuild:
-    substituteFrom:
-      - name: cluster-settings
-        kind: ConfigMap
-        optional: false
   dependsOn:
     - name: cluster-repos
       namespace: flux-system
