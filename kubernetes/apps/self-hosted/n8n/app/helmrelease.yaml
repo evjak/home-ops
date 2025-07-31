@@ -41,7 +41,10 @@ spec:
               N8N_HOST: &host "{{ .Release.Name }}.internal.${SECRET_DOMAIN}"
               N8N_LOG_LEVEL: info
               N8N_LOG_OUTPUT: console
-              N8N_ENCRYPTION_KEY:
+
+              # User management
+              EXTERNAL_HOOK_FILES: /config/.n8n/hooks.js
+              N8N_FORWARD_AUTH_HEADER: X-authentik-email
             envFrom:
               - secretRef:
                   name: n8n-secret
