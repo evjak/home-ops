@@ -99,7 +99,7 @@ spec:
               - name: "sdb"
           - name: "talos-controlplane-hw-1"
             devices:
-              - name: "nvme0n1"
+              - name: "sda"
           - name: "talos-worker-1"
             devices:
               - name: "sdb"
