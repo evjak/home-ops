@@ -139,9 +139,6 @@ spec:
           - name: "talos-controlplane-1"
             devices:
               - name: "sdb"
-          - name: "talos-controlplane-2"
-            devices:
-              - name: "sdb"
           - name: "talos-controlplane-3"
             devices:
               - name: "sdb"
