@@ -104,21 +104,15 @@ spec:
         config:
           osdsPerDevice: "1"
         nodes:
-          - name: "talos-controlplane-1"
-            devices:
-              - name: "sdb"
-          - name: "talos-controlplane-3"
-            devices:
-              - name: "sdb"
           - name: "talos-controlplane-hw-1"
             devices:
               - name: "sda"
           - name: "talos-controlplane-hw-2"
             devices:
               - name: "sda"
-          - name: "talos-worker-1"
+          - name: "talos-controlplane-hw-2"
             devices:
-              - name: "sdb"
+              - name: "sda"
 
     cephBlockPools:
       - name: ceph-blockpool
