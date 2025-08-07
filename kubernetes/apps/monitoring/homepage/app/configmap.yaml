@@ -59,10 +59,6 @@ data:
             href: https://router.${SECRET_DOMAIN}
             icon: mikrotik-light.png
             description: Router WEB UI
-        - Proxmox:
-            href: https://proxmox.${SECRET_DOMAIN}
-            icon: proxmox-light.png
-            description: VM management
         - Nginx Proxy Manager:
             href: https://nginxpm.${SECRET_DOMAIN}
             icon: nginx-proxy-manager.png
