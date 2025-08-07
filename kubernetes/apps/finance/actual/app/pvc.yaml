@@ -2,7 +2,7 @@ apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   name: actual-budget
-  namespace: default
+  namespace: finance
 spec:
   storageClassName: ceph-block
   accessModes:
