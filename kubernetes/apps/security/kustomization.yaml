@@ -10,3 +10,4 @@ resources:
   - ./infisical-secrets/ks.yaml
   - ./external-secrets/ks.yaml
   - ./authentik/ks.yaml
+  - ./tailscale-operator/ks.yaml
