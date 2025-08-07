@@ -11,11 +11,9 @@ spec:
     spec:
       chart: tailscale-operator
       version: 1.62.0
-      interval: 30m
       sourceRef:
         kind: HelmRepository
-        name: tailscale
-        namespace: flux-system
+        name: tailscale-charts
   values:
     operatorConfig:
       hostname: "tailscale-operator"
