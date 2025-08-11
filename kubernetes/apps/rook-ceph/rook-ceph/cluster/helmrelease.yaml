@@ -37,6 +37,7 @@ spec:
 
     ingress:
       dashboard:
+        enabled: true
         ingressClassName: internal
         annotations:
           gethomepage.dev/enabled: "true"

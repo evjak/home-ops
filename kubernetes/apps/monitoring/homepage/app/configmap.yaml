@@ -59,10 +59,6 @@ data:
             href: https://router.${SECRET_DOMAIN}
             icon: mikrotik-light.png
             description: Router WEB UI
-        - Nginx Proxy Manager:
-            href: https://nginxpm.${SECRET_DOMAIN}
-            icon: nginx-proxy-manager.png
-            description: Nginx Proxy Management
         - Cloudflared:
             href: https://dash.cloudflare.com/
             icon: cloudflare-zero-trust.png
@@ -73,10 +69,6 @@ data:
               tunnelid: {{HOMEPAGE_VAR_CLOUDFLARE_TUNNEL_ID}}
               key: {{HOMEPAGE_VAR_CLOUDFLARE_API_TOKEN}}
     - Self-Hosted:
-        - Wavelog:
-            href: http://wavelog.lan/
-            icon: booklogr.png
-            description: Ham radio logging software
         - Paperless:
             href: https://paperless.${SECRET_DOMAIN}
             icon: paperless.png
