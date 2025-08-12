@@ -31,3 +31,9 @@ spec:
       podMonitorEnabled: true
       grafanaDashboard:
         create: true
+    resources:
+      requests:
+        cpu: 15m
+        memory: 192Mi
+      limits:
+        memory: 256Mi
