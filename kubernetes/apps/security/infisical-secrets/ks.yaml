@@ -7,9 +7,6 @@ metadata:
   namespace: &namespace security
 spec:
   targetNamespace: *namespace
-  commonMetadata:
-    labels:
-      app.kubernetes.io/name: *app
   path: ./kubernetes/apps/security/infisical-secrets/app
   prune: true
   sourceRef:
