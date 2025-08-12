@@ -20,7 +20,7 @@ cniConfig:
 
 nodes:
   - hostname: "talos-controlplane-hw-1"
-    ipAddress: "192.168.31.66"
+    ipAddress: "192.168.31.61"
     installDisk: "/dev/nvme0n1"
     machineSpec:
       secureboot: true
@@ -31,7 +31,7 @@ nodes:
           hardwareAddr: "d8:9e:f3:8f:46:3c"
         dhcp: false
         addresses:
-          - "192.168.31.66/24"
+          - "192.168.31.61/24"
         routes:
           - network: "0.0.0.0/0"
             gateway: "192.168.31.1"
@@ -39,7 +39,7 @@ nodes:
         vip:
           ip: "192.168.31.107"
   - hostname: "talos-controlplane-hw-2"
-    ipAddress: "192.168.31.61"
+    ipAddress: "192.168.31.62"
     installDisk: "/dev/nvme0n1"
     machineSpec:
       secureboot: true
@@ -50,7 +50,7 @@ nodes:
           hardwareAddr: "d8:9e:f3:92:d5:9a"
         dhcp: false
         addresses:
-          - "192.168.31.61/24"
+          - "192.168.31.62/24"
         routes:
           - network: "0.0.0.0/0"
             gateway: "192.168.31.1"
@@ -58,7 +58,7 @@ nodes:
         vip:
           ip: "192.168.31.107"
   - hostname: "talos-controlplane-hw-3"
-    ipAddress: "192.168.31.62"
+    ipAddress: "192.168.31.63"
     installDisk: "/dev/nvme0n1"
     machineSpec:
       secureboot: true
@@ -69,7 +69,7 @@ nodes:
           hardwareAddr: "50:9a:4c:5b:33:fb"
         dhcp: false
         addresses:
-          - "192.168.31.62/24"
+          - "192.168.31.63/24"
         routes:
           - network: "0.0.0.0/0"
             gateway: "192.168.31.1"
