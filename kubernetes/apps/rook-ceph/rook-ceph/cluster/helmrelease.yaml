@@ -83,22 +83,6 @@ spec:
           - name: rook
             enabled: true
 
-      # NOTE: only overriding problematic resource constraints
-      resources:
-        mgr:
-          requests:
-            cpu: 100m # 500m
-        mon:
-          requests:
-            cpu: 200m # 1000m
-            memory: 500Mi # 1Gi
-          limits:
-            memory: 1Gi # 2Gi
-        osd:
-          requests:
-            cpu: 200m # 1000m
-            memory: 2Gi # 4Gi
-
       storage:
         useAllNodes: false
         useAllDevices: false
