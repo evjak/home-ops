@@ -19,6 +19,9 @@ spec:
       APP: *app
   prune: true
   retryInterval: 2m
+  dependsOn:
+    - name: cloudnative-pg
+      namespace: database
   sourceRef:
     kind: GitRepository
     name: flux-system
