@@ -15,7 +15,7 @@ spec:
     remediation:
       retries: 3
   dependsOn:
-    - name: cloudflared
+    - name: cloudflare-dns
       namespace: network
   values:
     controllers:
