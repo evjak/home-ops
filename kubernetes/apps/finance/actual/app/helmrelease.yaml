@@ -63,9 +63,8 @@ spec:
         ports:
           http:
             port: *httpPort
-    ingress:
+    route:
       app:
-        className: external
         annotations:
           gethomepage.dev/enabled: "true"
           gethomepage.dev/icon: actual-budget.png
@@ -73,13 +72,15 @@ spec:
           gethomepage.dev/group: Self-Hosted
           gethomepage.dev/description: Budgeting tool
           external-dns.alpha.kubernetes.io/target: "external.${SECRET_DOMAIN}"
-        hosts:
-          - host: "actual.${SECRET_DOMAIN}"
-            paths:
-              - path: /
-                service:
-                  identifier: app
-                  port: http
+        hostnames: ["actual.${SECRET_DOMAIN}"]
+        parentRefs:
+          - name: external
+            namespace: kube-system
+            sectionName: https
+        rules:
+          - backendRefs:
+              - identifier: app
+                port: *httpPort
     persistence:
       data:
         existingClaim: *appname
