@@ -27,7 +27,7 @@ spec:
               tag: 1.26.3-alpine
             env:
               CRON_MIN: "*"
-              DOMAIN: "{{ .Release.Name }}.internal.${SECRET_DOMAIN}"
+              DOMAIN: "{{ .Release.Name }}.${SECRET_DOMAIN}"
               LISTEN: &port 8080
             probes:
               liveness:
@@ -57,22 +57,16 @@ spec:
               - path: /var/www/FreshRSS/extensions
                 subPath: extensions
                 readOnly: false
-    ingress:
+    route:
       app:
-        className: internal
         annotations:
           gethomepage.dev/enabled: "true"
           gethomepage.dev/icon: freshrss
           gethomepage.dev/name: Freshrss
           gethomepage.dev/group: Self-Hosted
           gethomepage.dev/description: RSS feed
-        hosts:
-          - host: &host "{{ .Release.Name }}.internal.${SECRET_DOMAIN}"
-            paths:
-              - path: /
-                service:
-                  identifier: app
-                  port: http
-        tls:
-          - hosts:
-              - *host
+        hostnames: ["{{ .Release.Name }}.${SECRET_DOMAIN}"]
+        parentRefs:
+          - name: internal
+            namespace: kube-system
+            sectionName: https

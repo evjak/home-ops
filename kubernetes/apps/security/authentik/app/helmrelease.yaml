@@ -54,9 +54,8 @@ spec:
         enabled: false
         serviceMonitor:
           enabled: false
-      ingress:
-        enabled: true
-        ingressClassName: external
+    route:
+      app:
         annotations:
           gethomepage.dev/enabled: "true"
           gethomepage.dev/icon: authentik.png
@@ -64,10 +63,11 @@ spec:
           gethomepage.dev/group: System
           gethomepage.dev/app: authentik
           gethomepage.dev/description: OIDC User Management
-          external-dns.alpha.kubernetes.io/target: "external.${SECRET_DOMAIN}"
-        hosts:
-            - &host sso.${SECRET_DOMAIN}
-        tls: [hosts: [*host]]
+        hostnames: ["sso.${SECRET_DOMAIN}"]
+        parentRefs:
+          - name: external
+            namespace: kube-system
+            sectionName: https
     worker:
       autoscaling:
         enabled: true
