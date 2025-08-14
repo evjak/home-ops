@@ -53,10 +53,6 @@ spec:
             port: &port 3000
     route:
       app:
-        annotations:
-          nginx.ingress.kubernetes.io/from-to-www-redirect: "true"
-          nginx.ingress.kubernetes.io/satisfy: any
-          nginx.ingress.kubernetes.io/whitelist-source-range: 192.168.31.0/24
         hostnames: ["{{ .Release.Name }}.${SECRET_DOMAIN}"]
         parentRefs:
           - name: internal

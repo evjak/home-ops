@@ -68,6 +68,10 @@ spec:
           - name: external
             namespace: kube-system
             sectionName: https
+        rules:
+          - backendRefs:
+            - identifier: app
+              port: 9443
     worker:
       autoscaling:
         enabled: true
