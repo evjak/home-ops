@@ -24,13 +24,17 @@ spec:
 
     route:
       dashboard:
+        enabled: true
         annotations:
           gethomepage.dev/enabled: "true"
           gethomepage.dev/name: "Ceph"
           gethomepage.dev/group: "System"
           gethomepage.dev/icon: "ceph"
           gethomepage.dev/description: "Rook-Ceph Dashboard."
-        hostnames: ["rook.${SECRET_DOMAIN}"]
+        host:
+          name: "rook.${SECRET_DOMAIN}"
+          path: /
+          pathType: PathPrefix
         parentRefs:
           - name: internal
             namespace: kube-system
