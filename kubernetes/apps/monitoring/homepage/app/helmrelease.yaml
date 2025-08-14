@@ -51,25 +51,21 @@ spec:
         ports:
           http:
             port: &port 3000
-    ingress:
+    route:
       app:
-        enabled: true
-        className: internal
         annotations:
           nginx.ingress.kubernetes.io/from-to-www-redirect: "true"
           nginx.ingress.kubernetes.io/satisfy: any
           nginx.ingress.kubernetes.io/whitelist-source-range: 192.168.31.0/24
-        hosts:
-          - host: &host "{{ .Release.Name }}.internal.${SECRET_DOMAIN}"
-            paths:
-              - path: /
-                pathType: Prefix
-                service:
-                  identifier: app
-                  port: http
-        tls:
-          - hosts:
-              - *host
+        hostnames: ["{{ .Release.Name }}.${SECRET_DOMAIN}"]
+        parentRefs:
+          - name: internal
+            namespace: kube-system
+            sectionName: https
+        rules:
+          - backendRefs:
+              - identifier: app
+                port: *port
     serviceAccount:
       homepage: {}
     persistence:

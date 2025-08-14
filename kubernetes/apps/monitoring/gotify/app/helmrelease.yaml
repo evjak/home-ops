@@ -55,26 +55,24 @@ spec:
         controller: gotify
         ports:
           http:
-            port: 80
-    ingress:
+            port: &port 80
+    route:
       app:
-        className: internal
         annotations:
           gethomepage.dev/enabled: "true"
           gethomepage.dev/icon: gotify
           gethomepage.dev/name: Gotify
           gethomepage.dev/group: System
           gethomepage.dev/description: Server for sending and receiving messages
-        hosts:
-          - host: &host "{{ .Release.Name }}.internal.${SECRET_DOMAIN}"
-            paths:
-              - path: /
-                service:
-                  identifier: app
-                  port: http
-        tls:
-          - hosts:
-              - *host
+        hostnames: ["{{ .Release.Name }}.${SECRET_DOMAIN}"]
+        parentRefs:
+          - name: internal
+            namespace: kube-system
+            sectionName: https
+        rules:
+          - backendRefs:
+              - identifier: app
+                port: *port
     persistence:
       config:
         existingClaim: *app

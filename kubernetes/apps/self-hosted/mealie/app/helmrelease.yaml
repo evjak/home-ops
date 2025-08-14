@@ -44,7 +44,7 @@ spec:
               repository: ghcr.io/mealie-recipes/mealie
               tag: v3.0.2
             env:
-              BASE_URL: https://mealie.internal.${SECRET_DOMAIN}
+              BASE_URL: https://mealie.${SECRET_DOMAIN}
               ALLOW_SIGNUP: true
               API_DOCS: false
               TZ: America/Los_Angeles
@@ -73,27 +73,25 @@ spec:
         controller: *app
         ports:
           http:
-            port: 9000
+            port: &port 9000
 
-    ingress:
+    route:
       app:
-        className: internal
         annotations:
           gethomepage.dev/enabled: "true"
           gethomepage.dev/icon: sh-mealie
           gethomepage.dev/name: Mealie
           gethomepage.dev/group: Self-Hosted
           gethomepage.dev/description: Recipe Management
-        hosts:
-          - host: &host "{{ .Release.Name }}.internal.${SECRET_DOMAIN}"
-            paths:
-              - path: /
-                service:
-                  identifier: app
-                  port: http
-        tls:
-          - hosts:
-              - *host
+        hostnames: ["{{ .Release.Name }}.${SECRET_DOMAIN}"]
+        parentRefs:
+          - name: internal
+            namespace: kube-system
+            sectionName: https
+        rules:
+          - backendRefs:
+              - identifier: app
+                port: *port
 
     persistence:
       config:
