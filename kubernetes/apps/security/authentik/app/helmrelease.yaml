@@ -71,7 +71,7 @@ spec:
         rules:
           - backendRefs:
             - identifier: app
-              port: 9000
+              port: 9443
     worker:
       autoscaling:
         enabled: true
