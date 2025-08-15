@@ -56,16 +56,10 @@ spec:
           enabled: false
     route:
       app:
-        annotations:
-          gethomepage.dev/enabled: "true"
-          gethomepage.dev/icon: authentik.png
-          gethomepage.dev/name: Authentik
-          gethomepage.dev/group: System
-          gethomepage.dev/app: authentik
-          gethomepage.dev/description: OIDC User Management
-        hostnames: ["sso.${SECRET_DOMAIN}"]
+        hostnames:
+          - sso.${SECRET_DOMAIN}
         parentRefs:
-          - name: external
+          - name: internal
             namespace: kube-system
             sectionName: https
         rules:
