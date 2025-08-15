@@ -54,24 +54,6 @@ spec:
         enabled: false
         serviceMonitor:
           enabled: false
-    route:
-      app:
-        annotations:
-          gethomepage.dev/enabled: "true"
-          gethomepage.dev/icon: authentik.png
-          gethomepage.dev/name: Authentik
-          gethomepage.dev/group: System
-          gethomepage.dev/app: authentik
-          gethomepage.dev/description: OIDC User Management
-        hostnames: ["sso.${SECRET_DOMAIN}"]
-        parentRefs:
-          - name: external
-            namespace: kube-system
-            sectionName: https
-        rules:
-          - backendRefs:
-            - identifier: app
-              port: 9443
     worker:
       autoscaling:
         enabled: true
