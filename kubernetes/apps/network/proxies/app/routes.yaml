@@ -1,5 +1,4 @@
 ---
-# yaml-language-server: $schema=https://github.com/yannh/kubernetes-json-schema/raw/refs/heads/master/master/service.json
 apiVersion: v1
 kind: Service
 metadata:
@@ -13,7 +12,6 @@ spec:
       targetPort: ${PROXY_IMMICH_PORT}
       protocol: TCP
 ---
-# yaml-language-server: $schema=https://github.com/yannh/kubernetes-json-schema/raw/refs/heads/master/master/endpoints.json
 apiVersion: v1
 kind: Endpoints
 metadata:
