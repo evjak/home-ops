@@ -11,6 +11,9 @@ spec:
       port: 80
       targetPort: ${PROXY_IMMICH_PORT}
       protocol: TCP
+      envFrom:
+        - secretRef:
+          name: proxies-secret
 ---
 apiVersion: v1
 kind: Endpoints
@@ -21,6 +24,9 @@ subsets:
       - ip: ${PROXY_IMMICH_IP}
     ports:
       - port: ${PROXY_IMMICH_PORT}
+    envFrom:
+      - secretRef:
+        name: proxies-secret
 ---
 apiVersion: gateway.networking.k8s.io/v1
 kind: HTTPRoute
