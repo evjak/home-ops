@@ -65,6 +65,13 @@ spec:
             port: *httpPort
     route:
       app:
+        annotations:
+          gethomepage.dev/enabled: "true"
+          gethomepage.dev/icon: actual-budget.png
+          gethomepage.dev/name: Actual Budget
+          gethomepage.dev/group: Self-Hosted
+          gethomepage.dev/description: Budgeting tool
+          external-dns.alpha.kubernetes.io/target: "external.${SECRET_DOMAIN}"
         hostnames: ["actual.${SECRET_DOMAIN}"]
         parentRefs:
           - name: external

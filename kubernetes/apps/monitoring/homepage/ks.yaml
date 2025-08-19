@@ -2,14 +2,14 @@
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
-  name: &app hajimari
+  name: &app homepage
   namespace: &namespace monitoring
 spec:
   commonMetadata:
     labels:
       app.kubernetes.io/name: *app
   interval: 30m
-  path: ./kubernetes/apps/monitoring/hajimari/app
+  path: ./kubernetes/apps/monitoring/homepage/app
   postBuild:
     substituteFrom:
       - name: cluster-secrets
