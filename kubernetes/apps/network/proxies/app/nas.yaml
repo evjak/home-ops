@@ -1,46 +1,53 @@
 ---
-# yaml-language-server: $schema=https://github.com/yannh/kubernetes-json-schema/raw/refs/heads/master/master/service.json
 apiVersion: v1
 kind: Service
 metadata:
-  name: &name nas
+  name: &app nas
   labels:
-    app: *name
+    app.kubernetes.io/name: *app
+    app.kubernetes.io/instance: *app
 spec:
+  type: ClusterIP
   ports:
-    - name: http
-      port: 80
-      targetPort: ${PROXY_NAS_PORT}
+    - port: 443
       protocol: TCP
+      targetPort: 80
+
 ---
-# yaml-language-server: $schema=https://github.com/yannh/kubernetes-json-schema/raw/refs/heads/master/master/endpoints.json
 apiVersion: v1
 kind: Endpoints
 metadata:
-  name: nas
+  name: &app nas
+  labels:
+    app.kubernetes.io/name: *app
+    app.kubernetes.io/instance: *app
 subsets:
   - addresses:
       - ip: ${PROXY_NAS_IP}
     ports:
-      - port: ${PROXY_NAS_PORT}
+      - port: 80
+
 ---
 apiVersion: gateway.networking.k8s.io/v1
 kind: HTTPRoute
 metadata:
-  name: &name nas
+  name: &app nas
+  labels:
+    app.kubernetes.io/name: *app
+    app.kubernetes.io/instance: *app
 spec:
-  hostnames:
-    - nas.${SECRET_DOMAIN}
   parentRefs:
     - name: internal
       namespace: kube-system
       sectionName: https
+  hostnames:
+    - nas.${SECRET_DOMAIN}
   rules:
-    - backendRefs:
-        - name: *name
-          port: 80
-      matches:
+    - matches:
         - path:
             type: PathPrefix
             value: /
+      backendRefs:
+        - name: *app
+          port: 443
 
