@@ -77,6 +77,12 @@ spec:
 
     route:
       app:
+        annotations:
+          gethomepage.dev/enabled: "true"
+          gethomepage.dev/icon: sh-mealie
+          gethomepage.dev/name: Mealie
+          gethomepage.dev/group: Self-Hosted
+          gethomepage.dev/description: Recipe Management
         hostnames: ["{{ .Release.Name }}.${SECRET_DOMAIN}"]
         parentRefs:
           - name: internal

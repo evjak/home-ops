@@ -1,0 +1,132 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: homepage-config
+  labels:
+    app.kubernetes.io/name: homepage
+data:
+  bookmarks.yaml: |
+    - Communicate:
+        - Discord:
+            - icon: discord.png
+              href: 'https://discord.com/app'
+        - Mail:
+            - icon: proton-mail.png
+              href: 'https://account.proton.me/mail'
+    - Reading:
+        - Reddit:
+            - icon: reddit.png
+              href: 'https://reddit.com'
+    - Devops:
+        - kubesearch:
+            - icon: kubernetes-dashboard.png
+              href: 'https://kubesearch.dev/'
+        - home-ops:
+            - icon: github.png
+              href: 'https://github.com/evjak/home-ops'
+        - dashboard-icons:
+            - icon: github.png
+              href: 'https://dashboardicons.com/'
+  kubernetes.yaml: |
+    mode: cluster
+  services.yaml: |
+    - Smart-Home:
+        - Home-Assistant:
+            # TODO: Migrate to actual address
+            href: http://homeassistant.local:8123/
+            icon: home-assistant.png
+            description: Home Automation Software
+        - Frigate:
+            href: https://frigate.${SECRET_DOMAIN}
+            icon: frigate-light.png
+            description: Video Security Software
+    - Media:
+        - TrueNas:
+            href: https://nas.${SECRET_DOMAIN}
+            icon: truenas.png
+            description: NAS Software
+        - Jellyfin:
+            href: https://jellyfin.${SECRET_DOMAIN}
+            icon: jellyfin.png
+            description: Home Media Software
+        - Immich:
+            href: https://photos.${SECRET_DOMAIN}
+            icon: immich.png
+            description: Self-hosted photos
+    - System:
+        - Mikrotik:
+            href: https://router.${SECRET_DOMAIN}
+            icon: mikrotik-light.png
+            description: Router WEB UI
+        - Cloudflared:
+            href: https://dash.cloudflare.com/
+            icon: cloudflare-zero-trust.png
+            description: Cloudflared Tunnel
+            widget:
+              type: cloudflared
+              accountid: {{HOMEPAGE_VAR_CLOUDFLARE_ACCOUNT_ID}}
+              tunnelid: {{HOMEPAGE_VAR_CLOUDFLARE_TUNNEL_ID}}
+              key: {{HOMEPAGE_VAR_CLOUDFLARE_API_TOKEN}}
+    - Self-Hosted:
+        - Paperless:
+            href: https://paperless.${SECRET_DOMAIN}
+            icon: paperless.png
+            description: Digital document management system
+
+  settings.yaml: |
+    title: My Home Dashboard
+    favicon: https://github.com/homarr-labs/dashboard-icons/blob/main/png/heimdall.png
+    useEqualHeights: true
+    theme: dark
+    color: slate
+    headerStyle: clean
+    quicklaunch:
+      searchDescriptions: true
+      hideInternetSearch: true
+      showSearchSuggestions: true
+      hideVisitURL: true
+    layout:
+      Media:
+        style: row
+        columns: 4
+        icon: mdi-multimedia
+      System:
+        style: row
+        columns: 5
+        icon: mdi-server-network
+      Self-Hosted:
+        style: row
+        columns: 5
+        icon: mdi-one-up
+      Smart-Home:
+        style: row
+        columns: 2
+        icon: mdi-home-automation
+  widgets.yaml: |
+    - logo:
+        icon: https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/webp/selfhosted-light.webp
+    - search:
+        provider: [duckduckgo]
+        focus: false
+        target: _blank
+    - greeting:
+        text_size: xl
+        text: "Hey! Welcome!"
+    - kubernetes:
+        cluster:
+          cpu: true
+          memory: true
+          show: true
+          showLabel: true
+        nodes:
+          cpu: true
+          memory: true
+          show: false
+          showLabel: true
+    - datetime:
+        text_size: l
+        format:
+          timeStyle: short
+          dateStyle: short
+          hourCycle: h23

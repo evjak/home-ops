@@ -58,6 +58,12 @@ spec:
             port: &port 80
     route:
       app:
+        annotations:
+          gethomepage.dev/enabled: "true"
+          gethomepage.dev/icon: gotify
+          gethomepage.dev/name: Gotify
+          gethomepage.dev/group: System
+          gethomepage.dev/description: Server for sending and receiving messages
         hostnames: ["{{ .Release.Name }}.${SECRET_DOMAIN}"]
         parentRefs:
           - name: internal
