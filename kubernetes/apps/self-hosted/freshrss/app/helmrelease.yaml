@@ -59,12 +59,6 @@ spec:
                 readOnly: false
     route:
       app:
-        annotations:
-          gethomepage.dev/enabled: "true"
-          gethomepage.dev/icon: freshrss
-          gethomepage.dev/name: Freshrss
-          gethomepage.dev/group: Self-Hosted
-          gethomepage.dev/description: RSS feed
         hostnames: ["{{ .Release.Name }}.${SECRET_DOMAIN}"]
         parentRefs:
           - name: internal

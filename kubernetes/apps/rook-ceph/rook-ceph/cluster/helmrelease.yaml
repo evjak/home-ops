@@ -25,12 +25,6 @@ spec:
     route:
       dashboard:
         enabled: true
-        annotations:
-          gethomepage.dev/enabled: "true"
-          gethomepage.dev/name: "Ceph"
-          gethomepage.dev/group: "System"
-          gethomepage.dev/icon: "ceph"
-          gethomepage.dev/description: "Rook-Ceph Dashboard."
         host:
           name: "rook.${SECRET_DOMAIN}"
           path: /
