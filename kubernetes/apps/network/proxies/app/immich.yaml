@@ -1,0 +1,54 @@
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: &app immich
+  labels:
+    app.kubernetes.io/name: *app
+    app.kubernetes.io/instance: *app
+spec:
+  type: ClusterIP
+  ports:
+    - port: 443
+      protocol: TCP
+      targetPort: ${PROXY_IMMICH_PORT}
+
+---
+apiVersion: v1
+kind: Endpoints
+metadata:
+  name: &app immich
+  labels:
+    app.kubernetes.io/name: *app
+    app.kubernetes.io/instance: *app
+subsets:
+  - addresses:
+      - ip: ${PROXY_IMMICH_IP}
+    ports:
+      - port: ${PROXY_IMMICH_PORT}
+
+---
+apiVersion: gateway.networking.k8s.io/v1
+kind: HTTPRoute
+metadata:
+  name: &app immich
+  labels:
+    app.kubernetes.io/name: *app
+    app.kubernetes.io/instance: *app
+spec:
+  parentRefs:
+    - name: internal
+      namespace: kube-system
+      sectionName: https
+  hostnames:
+    - immich.${SECRET_DOMAIN}
+  rules:
+    - matches:
+        - path:
+            type: PathPrefix
+            value: /
+      backendRefs:
+        - name: *app
+          port: 443
+
