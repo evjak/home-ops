@@ -62,7 +62,7 @@ spec:
           gethomepage.dev/description: Tasks and project management platform.
           gethomepage.dev/group: Self-Hosted
           gethomepage.dev/icon: vikunja.png
-        hostnames: ["{{ .Release.Name }}.${SECRET_DOMAIN}"]
+        hostnames: ["todo.${SECRET_DOMAIN}"]
         parentRefs:
           - name: internal
             namespace: kube-system

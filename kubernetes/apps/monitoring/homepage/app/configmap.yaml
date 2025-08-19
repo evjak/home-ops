@@ -30,6 +30,8 @@ data:
               href: 'https://dashboardicons.com/'
   kubernetes.yaml: |
     mode: cluster
+    gateway: true
+    ingress: false
   services.yaml: |
     - Smart-Home:
         - Home-Assistant:

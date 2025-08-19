@@ -9,7 +9,6 @@ metadata:
     gethomepage.dev/group: Infrastructure
     gethomepage.dev/app: authentik
     gethomepage.dev/description: OIDC User Management
-    gethomepage.dev/widget.type: authentik
 spec:
   hostnames:
     - sso.${SECRET_DOMAIN}
