@@ -42,7 +42,7 @@ spec:
       namespace: kube-system
       sectionName: https
   hostnames:
-    - immich.${SECRET_DOMAIN}
+    - photos.${SECRET_DOMAIN}
   rules:
     - matches:
         - path:
