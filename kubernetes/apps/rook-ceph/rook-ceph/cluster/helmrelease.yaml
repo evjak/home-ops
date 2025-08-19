@@ -31,6 +31,8 @@ spec:
           gethomepage.dev/group: "System"
           gethomepage.dev/icon: "ceph"
           gethomepage.dev/description: "Rook-Ceph Dashboard."
+          gethomepage.dev/pod-selector: >-
+              app.kubernetes.io/name in (ceph-mgr)
         host:
           name: "rook.${SECRET_DOMAIN}"
           path: /
