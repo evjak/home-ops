@@ -10,7 +10,6 @@ metadata:
     gethomepage.dev/app: authentik
     gethomepage.dev/description: OIDC User Management
     gethomepage.dev/widget.type: authentik
-    hajimari.io/icon: simple-icons:authentik
 spec:
   hostnames:
     - sso.${SECRET_DOMAIN}
