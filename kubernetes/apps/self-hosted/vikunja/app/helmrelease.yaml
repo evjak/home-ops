@@ -56,12 +56,6 @@ spec:
             port: &port 3456
     route:
       app:
-        annotations:
-          gethomepage.dev/enabled: "true"
-          gethomepage.dev/name: Vikunja
-          gethomepage.dev/description: Tasks and project management platform.
-          gethomepage.dev/group: Self-Hosted
-          gethomepage.dev/icon: vikunja.png
         hostnames: ["{{ .Release.Name }}.${SECRET_DOMAIN}"]
         parentRefs:
           - name: internal

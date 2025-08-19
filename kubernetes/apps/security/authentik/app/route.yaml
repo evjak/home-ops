@@ -3,13 +3,6 @@ kind: HTTPRoute
 metadata:
   name: authentik
   annotations:
-    gethomepage.dev/enabled: "true"
-    gethomepage.dev/icon: authentik.png
-    gethomepage.dev/name: Authentik
-    gethomepage.dev/group: Infrastructure
-    gethomepage.dev/app: authentik
-    gethomepage.dev/description: OIDC User Management
-    gethomepage.dev/widget.type: authentik
     hajimari.io/icon: simple-icons:authentik
 spec:
   hostnames:
