@@ -4,4 +4,4 @@ kind: ConfigMap
 metadata:
   name: cluster-settings
 data:
-  TIMEZONE: "America/Los_Angeles"
+  TZ: "America/Los_Angeles"
