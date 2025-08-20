@@ -36,7 +36,7 @@ data:
     - Smart-Home:
         - Home-Assistant:
             # TODO: Migrate to actual address
-            href: http://homeassistant.local:8123/
+            href: http://home.${SECRET_DOMAIN}
             icon: home-assistant.png
             description: Home Automation Software
         - Frigate:
