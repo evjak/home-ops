@@ -24,13 +24,14 @@ spec:
 
     route:
       dashboard:
-        enabled: true
         annotations:
           gethomepage.dev/enabled: "true"
           gethomepage.dev/name: "Ceph"
           gethomepage.dev/group: "System"
           gethomepage.dev/icon: "ceph"
           gethomepage.dev/description: "Rook-Ceph Dashboard."
+          gethomepage.dev/pod-selector: >-
+              app.kubernetes.io/name in (ceph-mgr)
         host:
           name: "rook.${SECRET_DOMAIN}"
           path: /
@@ -40,6 +41,10 @@ spec:
             namespace: kube-system
             sectionName: https
 
+    network:
+      provider: host
+      connections:
+        requireMsgr2: true
     cephClusterSpec:
       cephConfig:
         global:
@@ -59,11 +64,8 @@ spec:
         ssl: false
 
       mgr:
+        count: 2
         modules:
-          - name: diskprediction_local
-            enabled: true
-          - name: insights
-            enabled: true
           - name: pg_autoscaler
             enabled: true
           - name: rook
