@@ -30,7 +30,7 @@ spec:
               repository: ghcr.io/gotify/server
               tag: 2.6.3@sha256:dfbee7fc4701b300936a24b01d24620b4d62e405204c71fd749a63abfb9b4ec4
             env:
-              TZ: America/Los_Angeles
+              TZ: ${TZ}
               GOTIFY_DATABASE_DIALECT: postgres
             envFrom: *envFrom
             securityContext:

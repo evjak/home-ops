@@ -47,7 +47,7 @@ spec:
               BASE_URL: https://mealie.${SECRET_DOMAIN}
               ALLOW_SIGNUP: true
               API_DOCS: false
-              TZ: America/Los_Angeles
+              TZ: ${TZ}
 
               # OpenID Values
               # From: https://docs.mealie.io/documentation/getting-started/installation/backend-config/#openid-connect-oidc
