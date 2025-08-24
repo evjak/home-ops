@@ -38,7 +38,7 @@ metadata:
     app.kubernetes.io/instance: *app
 spec:
   parentRefs:
-    - name: external
+    - name: internal
       namespace: kube-system
       sectionName: https
   hostnames:
