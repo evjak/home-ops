@@ -10,3 +10,4 @@ resources:
   - ./mealie/ks.yaml
   - ./n8n/ks.yaml
   - ./freshrss/ks.yaml
+  - ./affine/ks.yaml
