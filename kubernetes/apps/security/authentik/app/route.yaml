@@ -6,7 +6,7 @@ metadata:
     gethomepage.dev/enabled: "true"
     gethomepage.dev/icon: authentik.png
     gethomepage.dev/name: Authentik
-    gethomepage.dev/group: Infrastructure
+    gethomepage.dev/group: Security
     gethomepage.dev/app: authentik
     gethomepage.dev/description: OIDC User Management
 spec:
