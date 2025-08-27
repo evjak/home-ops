@@ -34,6 +34,10 @@ spec:
             env:
               TZ: "${TZ}"
               NODE_ENV: production
+              # Redis configuration
+              REDIS_SERVER_HOST: dragonfly.storage.svc.cluster.local
+              REDIS_SERVER_PORT: "6379"
+              REDIS_SERVER_DATABASE: "0"
               # Server configuration
               PORT: &port "3010"
               AFFINE_INDEXER_ENABLED: true
