@@ -73,7 +73,7 @@ spec:
           gethomepage.dev/description: Budgeting tool
         hostnames: ["actual.${SECRET_DOMAIN}"]
         parentRefs:
-          - name: external
+          - name: internal
             namespace: kube-system
             sectionName: https
         rules:
