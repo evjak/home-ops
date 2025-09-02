@@ -19,6 +19,9 @@ spec:
     substitute:
       APP: *app
   prune: true
+  dependsOn:
+    - name: external-secrets
+      namespace: security
   retryInterval: 1m
   sourceRef:
     kind: GitRepository

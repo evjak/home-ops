@@ -12,8 +12,10 @@ spec:
   interval: 1h
   path: ./kubernetes/apps/self-hosted/vikunja/app
   dependsOn:
-    - name: cloudnative-pg
-      namespace: database
+    - name: external-secrets
+      namespace: security
+    - name: rook-ceph-cluster
+      namespace: rook-ceph
   postBuild:
     substituteFrom:
       - name: cluster-secrets
