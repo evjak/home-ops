@@ -11,9 +11,6 @@ spec:
       app.kubernetes.io/name: *app
   interval: 1h
   path: ./kubernetes/apps/self-hosted/n8n/app
-  dependsOn:
-    - name: cloudnative-pg
-      namespace: database
   postBuild:
     substituteFrom:
       - name: cluster-secrets
@@ -23,6 +20,11 @@ spec:
     substitute:
       APP: *app
   prune: true
+  dependsOn:
+    - name: external-secrets
+      namespace: security
+    - name: rook-ceph-cluster
+      namespace: rook-ceph
   retryInterval: 2m
   sourceRef:
     kind: GitRepository
