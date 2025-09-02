@@ -48,10 +48,6 @@ data:
             href: https://nas.${SECRET_DOMAIN}
             icon: truenas.png
             description: NAS Software
-        - Jellyfin:
-            href: https://jellyfin.${SECRET_DOMAIN}
-            icon: jellyfin.png
-            description: Home Media Software
         - Immich:
             href: https://photos.${SECRET_DOMAIN}
             icon: immich.png
