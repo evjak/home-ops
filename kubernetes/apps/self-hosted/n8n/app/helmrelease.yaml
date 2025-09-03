@@ -64,7 +64,7 @@ spec:
           gethomepage.dev/enabled: "true"
           gethomepage.dev/icon: n8n
           gethomepage.dev/name: n8n
-          gethomepage.dev/group: Self-Hosted
+          gethomepage.dev/group: Development
           gethomepage.dev/description: Automation Tool
         hostnames: ["{{ .Release.Name }}.${SECRET_DOMAIN}"]
         parentRefs:
