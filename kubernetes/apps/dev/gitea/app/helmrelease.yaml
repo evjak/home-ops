@@ -98,7 +98,15 @@ spec:
         type: emptyDir
     service:
       app:
+        # TODO: Walkaround for SSH access.
+        type: LoadBalancer
+        annotations:
+          lbipam.cilium.io/ips: 192.168.31.112
         controller: *app
         ports:
           http:
             port: *port
+          ssh:
+            port: 22
+            protocol: TCP
+            targetPort: 2222
