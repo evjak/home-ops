@@ -36,7 +36,7 @@ spec:
               # - name: DOCKER_CERT_PATH
               #   value: /certs/client
               - name: GITEA_INSTANCE_URL
-                value: https://gitea.${SECRET_DOMAIN}
+                value: http://gitea.dev.svc.cluster.local:3000
               - name: GITEA_RUNNER_LABELS
                 value: "docker:docker://catthehacker/ubuntu:act-latest"
             envFrom:
