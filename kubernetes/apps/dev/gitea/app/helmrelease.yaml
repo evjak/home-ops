@@ -47,6 +47,7 @@ spec:
               # GITEA__SERVICE__ENABLE_AUTO_REGISTRATION: "true"
               GITEA__MIGRATIONS__ALLOW_LOCALNETWORKS: "true"
               ENABLE_PASSWORD_SIGNIN_FORM: "false"
+              ENABLE_BASIC_AUTHENTICATION: "false"
 
               TZ: ${TZ}
 
