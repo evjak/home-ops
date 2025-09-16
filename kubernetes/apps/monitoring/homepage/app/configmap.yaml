@@ -75,6 +75,7 @@ data:
   settings.yaml: |
     title: My Home Dashboard
     favicon: https://github.com/homarr-labs/dashboard-icons/blob/main/png/heimdall.png
+    background: https://raw.githubusercontent.com/dharmx/walls/refs/heads/main/apocalypse/a_motorcycle_parked_outside_a_restaurant.jpg
     useEqualHeights: true
     theme: dark
     color: slate
