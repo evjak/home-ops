@@ -13,6 +13,10 @@ spec:
   interval: 30m
   timeout: 5m
   path: "./kubernetes/apps/dev/it-tools/app"
+  postBuild:
+    substituteFrom:
+      - name: cluster-secrets
+        kind: Secret
   prune: true
   sourceRef:
     kind: GitRepository
