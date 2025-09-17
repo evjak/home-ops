@@ -66,11 +66,6 @@ data:
               accountid: {{HOMEPAGE_VAR_CLOUDFLARE_ACCOUNT_ID}}
               tunnelid: {{HOMEPAGE_VAR_CLOUDFLARE_TUNNEL_ID}}
               key: {{HOMEPAGE_VAR_CLOUDFLARE_API_TOKEN}}
-    - Self-Hosted:
-        - Paperless:
-            href: https://paperless.${SECRET_DOMAIN}
-            icon: paperless.png
-            description: Digital document management system
 
   settings.yaml: |
     title: My Home Dashboard
@@ -78,6 +73,7 @@ data:
     background:
       image: https://raw.githubusercontent.com/dharmx/walls/refs/heads/main/apocalypse/a_motorcycle_parked_outside_a_restaurant.jpg
       opacity: 20
+    cardBlur: xs
     useEqualHeights: true
     theme: dark
     color: slate

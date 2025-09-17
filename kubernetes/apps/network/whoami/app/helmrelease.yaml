@@ -49,7 +49,7 @@ spec:
           gethomepage.dev/enabled: "true"
           gethomepage.dev/icon: whoogle.png
           gethomepage.dev/name: Who Am I
-          gethomepage.dev/group: System
+          gethomepage.dev/group: Development
           gethomepage.dev/description: whoami service
         parentRefs:
           - name: external
