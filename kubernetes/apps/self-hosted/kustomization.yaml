@@ -7,6 +7,5 @@ components:
   - ../../components/common
 resources:
   - ./vikunja/ks.yaml
-  - ./mealie/ks.yaml
   - ./n8n/ks.yaml
   - ./kitchenowl/ks.yaml
