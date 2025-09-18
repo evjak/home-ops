@@ -90,7 +90,7 @@ spec:
           gethomepage.dev/enabled: "true"
           gethomepage.dev/icon: kitchenowl
           gethomepage.dev/name: KitchenOwl
-          gethomepage.dev/group: Kitchen
+          gethomepage.dev/group: Self-Hosted
           gethomepage.dev/description: Recipe Management
         hostnames: ["{{ .Release.Name }}.${SECRET_DOMAIN}"]
         parentRefs:
