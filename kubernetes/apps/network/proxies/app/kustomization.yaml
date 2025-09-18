@@ -7,7 +7,7 @@ resources:
   - ./ap.yaml
   - ./frigate.yaml
   - ./immich.yaml
-  - ./paperless.yaml
   - ./router.yaml
   - ./ha.yaml
+  - ./penpot.yaml
 
