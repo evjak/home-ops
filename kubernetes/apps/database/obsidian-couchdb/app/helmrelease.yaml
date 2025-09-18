@@ -77,7 +77,7 @@ spec:
           gethomepage.dev/enabled: "true"
           gethomepage.dev/icon: obsidian
           gethomepage.dev/name: Obsidian DB
-          gethomepage.dev/group: Database
+          gethomepage.dev/group: Self-Hosted
           gethomepage.dev/description: Local Obsidian Sync Storage
         hostnames: ["{{ .Release.Name }}.${SECRET_DOMAIN}"]
         parentRefs:

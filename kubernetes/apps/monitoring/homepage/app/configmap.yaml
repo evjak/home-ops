@@ -103,7 +103,7 @@ data:
         icon: mdi-one-up
       Smart-Home:
         style: row
-        columns: 2
+        columns: 1
         icon: mdi-home-automation
   widgets.yaml: |
     - logo:

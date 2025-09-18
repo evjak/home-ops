@@ -10,3 +10,4 @@ resources:
   - ./n8n/ks.yaml
   - ./kitchenowl/ks.yaml
   - ./tududi/ks.yaml
+  - ./lubelog/ks.yaml
