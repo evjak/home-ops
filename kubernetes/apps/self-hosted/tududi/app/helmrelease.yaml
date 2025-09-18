@@ -43,7 +43,7 @@ spec:
                 exec /app/backend/cmd/start.sh
             envFrom:
               - secretRef:
-                  name: *app
+                  name: tududi-secret
             env:
               TUDUDI_INTERNAL_SSL_ENABLED: false
               TUDUDI_ALLOWED_ORIGINS: "https://tududi.${SECRET_DOMAIN}"
