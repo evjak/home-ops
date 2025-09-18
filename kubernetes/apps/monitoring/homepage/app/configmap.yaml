@@ -43,6 +43,11 @@ data:
             href: https://frigate.${SECRET_DOMAIN}
             icon: frigate-light.png
             description: Video Security Software
+    - Development:
+        - Penpot:
+            href: https://penpot.${SECRET_DOMAIN}
+            icon: penpot-light.png
+            description: Prototype Platform
     - Media:
         - TrueNas:
             href: https://nas.${SECRET_DOMAIN}
