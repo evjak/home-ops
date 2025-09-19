@@ -65,8 +65,8 @@ spec:
               EMAIL_MANDATORY: false
               FRONT_URL: https://kitchenowl.${SECRET_DOMAIN}
               OPEN_REGISTRATION: false
-              SMTP_PORT: 25
-              SMTP_HOST: smtp-relay.services.svc.cluster.local
+              SMTP_PORT: 8080
+              SMTP_HOST: smtp-relay.network.svc.cluster.local
               SMTP_FROM: alerts@${SECRET_DOMAIN}
               STORAGE_PATH: "/data"
             envFrom: *envFrom
