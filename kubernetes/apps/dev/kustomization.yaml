@@ -10,3 +10,4 @@ resources:
   - ./it-tools/ks.yaml
   - ./atuin/ks.yaml
   - ./bytestash/ks.yaml
+  - ./excalidraw/ks.yaml
