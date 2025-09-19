@@ -52,8 +52,8 @@ spec:
               TZ: ${TZ}
 
               GITEA__MAILER__PROTOCOL: "SMTP"
-              GITEA__MAILER__SMTP_ADDR: "smtp-reley.network.svc.cluster.local"
-              GITEA__MAILER__SMTP_PORT: "25"
+              GITEA__MAILER__SMTP_ADDR: "smtp-relay.network.svc.cluster.local"
+              GITEA__MAILER__SMTP_PORT: "8080"
               GITEA__MAILER__FROM: "gitea@${SECRET_DOMAIN}"
             envFrom: *envFrom
             resources:
