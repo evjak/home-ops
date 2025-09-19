@@ -46,7 +46,7 @@ spec:
               # SMTP
               VIKUNJA_MAILER_HOST: smtp-relay.network.svc.cluster.local
               VIKUNJA_MAILER_PORT: 25
-              VIKUNJA_MAILER_FROMEMAIL: Vikunja <vikunja@${SECRET_DOMAIN}>
+              VIKUNJA_MAILER_FROMEMAIL: alerts@${SECRET_DOMAIN}
             resources:
               requests:
                 cpu: 5m
