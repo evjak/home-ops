@@ -9,8 +9,7 @@ resources:
   - ./cloudflare-dns/ks.yaml
   - ./cloudflare-tunnel/ks.yaml
   - ./k8s-gateway/ks.yaml
-# (TODO) temp disable
-#  - ./externalsecret.yaml
+  - ./externalsecret.yaml
   - ./proxies/ks.yaml
   - ./smtp-relay/ks.yaml
   - ./whoami/ks.yaml
