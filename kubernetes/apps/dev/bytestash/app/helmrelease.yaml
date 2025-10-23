@@ -73,8 +73,8 @@ spec:
           gethomepage.dev/description: Snippet manager
         hostnames: ["paste.${SECRET_DOMAIN}"]
         parentRefs:
-          - name: internal
-            namespace: kube-system
+          - name: envoy-internal
+            namespace: network
             sectionName: https
         rules:
           - backendRefs:
