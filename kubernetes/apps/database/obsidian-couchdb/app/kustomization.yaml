@@ -6,6 +6,7 @@ resources:
   - ./externalsecret.yaml
   - ./helmrelease.yaml
   - ./pvc.yaml
+  - ./ocirepository.yaml
 configMapGenerator:
   - name: obsidian-couchdb-configmap
     files:

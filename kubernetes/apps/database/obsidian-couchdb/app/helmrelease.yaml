@@ -8,8 +8,7 @@ spec:
   interval: 30m
   chartRef:
     kind: OCIRepository
-    name: app-template
-    namespace: flux-system
+    name: obsidian-couchdb
   install:
     remediation:
       retries: 3
@@ -81,8 +80,8 @@ spec:
           gethomepage.dev/description: Local Obsidian Sync Storage
         hostnames: ["{{ .Release.Name }}.${SECRET_DOMAIN}"]
         parentRefs:
-          - name: external
-            namespace: kube-system
+          - name: envoy-external
+            namespace: network
             sectionName: https
         rules:
           - backendRefs:
