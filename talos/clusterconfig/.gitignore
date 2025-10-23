@@ -1,8 +1,4 @@
-kubernetes-talos-controlplane-1.yaml
-kubernetes-talos-controlplane-2.yaml
-kubernetes-talos-controlplane-3.yaml
-kubernetes-talos-worker-1.yaml
+kubernetes-c1.yaml
+kubernetes-c2.yaml
+kubernetes-c3.yaml
 talosconfig
-kubernetes-talos-controlplane-hw-1.yaml
-kubernetes-talos-controlplane-hw-2.yaml
-kubernetes-talos-controlplane-hw-3.yaml
